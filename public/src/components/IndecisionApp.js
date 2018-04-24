@@ -7,7 +7,7 @@ import AddOption from './AddOption';
 
 export default class IndecisionApp extends React.Component {
     handlePick() {
-        // let randomNum = Math.floor(Math.rand) * options.length;
+        // let randomNum = Math.floor(Math.random) * options.length;
         console.log('handlePick');
     }
 
@@ -15,9 +15,6 @@ export default class IndecisionApp extends React.Component {
         console.log("handleRemoveAll")
     }
     
-    handleAddOption() {
-        console.log("handleAddOption")
-    }
     render() {
         const options = ['one', 'two', 'three']
         
@@ -32,7 +29,6 @@ export default class IndecisionApp extends React.Component {
                     options={options} 
                     handleRemoveAll={this.handleRemoveAll}
                 />
-                <Option />
                 <AddOption handleAddOption={this.handleAddOption}/>
              </div>
         );
