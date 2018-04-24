@@ -6,6 +6,10 @@ import Option from './Option';
 import AddOption from './AddOption';
 
 export default class IndecisionApp extends React.Component {
+    state = {
+        options: []
+    }
+    
     handlePick() {
         // let randomNum = Math.floor(Math.random) * options.length;
         console.log('handlePick');
@@ -15,18 +19,16 @@ export default class IndecisionApp extends React.Component {
         console.log("handleRemoveAll")
     }
     
-    render() {
-        const options = ['one', 'two', 'three']
-        
+    render() {    
         return(
             <div>
                 <Header 
                     title="INDECISION APP"
                     subtitle="Put your hands in the life of a computer.."  
                 />
-                <Action handlePick={this.handlePick}/>
+                <Action hasOptions={this.state.options.length > 0}/>
                 <Options 
-                    options={options} 
+                    options={this.state.options} 
                     handleRemoveAll={this.handleRemoveAll}
                 />
                 <AddOption handleAddOption={this.handleAddOption}/>
