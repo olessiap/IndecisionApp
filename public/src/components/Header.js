@@ -1,12 +1,10 @@
 import React from 'react';
 
-const Header  = () => {
-    const title = "Indecision App!";
-    const subtitle = "Put your hands in the life of a computer";
+const Header  = (props) => {
     return(
         <div>
-            <h1>{title}</h1>
-            <p>{subtitle}</p>
+            <h1>{props.title}</h1>
+            <p>{props.subtitle}</p>
         </div>
     );
 }

@@ -5,10 +5,11 @@ const Options = () => {
     const optionsArray = ['one', 'two', 'three']
     return(
         <div>
+            <button>Remove All</button>
             <p>List of options</p>
             <ol>
                 {
-                    optionsArray.map(option => <li key={option.id}>{option}</li>) 
+                    optionsArray.map(option => <li key={option}>{option}</li>) 
                 }
             </ol>
         </div>

@@ -9,8 +9,9 @@ COMPONENTS:
     IndecisionApp    
     Header
     Action - handler functions, local storage stuff
-    Options - use Option to display options
-    Option - form input
+    Options - use Option to display options, delete all button
+    Option - individual option + delete button
+    AddOption - form input
     OptionModal
 
 ERRORS/CONDITIONALS
