@@ -7,7 +7,7 @@ import AddOption from './AddOption';
 
 export default class IndecisionApp extends React.Component {
     state = {
-        options: []
+        options: ["one", "two"]
     }
     
     handlePick() {
@@ -15,8 +15,12 @@ export default class IndecisionApp extends React.Component {
         console.log('handlePick');
     }
 
-    handleRemoveAll() {
-        console.log("handleRemoveAll")
+    handleRemoveAll = () => {
+        this.setState(()  => {
+            return {
+                options: []
+            }
+        });
     }
     
     render() {    

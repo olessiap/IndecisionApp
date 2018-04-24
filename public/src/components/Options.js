@@ -4,7 +4,8 @@ import Option from './Option';
 const Options = (props) => {
     return(
         <div>
-            <button onClick={props.handleRemoveAll}>Remove All</button>
+            <button 
+                onClick={props.handleRemoveAll}>Remove All</button>
             <p>List of options</p>
                 {
                     props.options.map(option => <Option key={option} optionText={option}/>) 
