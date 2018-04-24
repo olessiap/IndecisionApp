@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Action = () => {
+const Action = (props) => {
     return(
         <div>
-            <button>What should I do?</button>
+            <button onClick={props.handlePick}>What should I do?</button>
         </div>
     )
 };

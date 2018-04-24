@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AddOption = () => {
+const AddOption = (props) => {
     return(
         <div>
             <form>
                 <input type = 'text' name = 'option'></input>
-                <button>Add Option</button>
+                <button onClick={props.handleAddOption}>Add Option</button>
             </form>
         </div>
     )
