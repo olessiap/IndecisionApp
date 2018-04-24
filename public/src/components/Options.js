@@ -1,17 +1,14 @@
 import React from 'react';
 import Option from './Option';
 
-const Options = () => {
-    const optionsArray = ['one', 'two', 'three']
+const Options = (props) => {
     return(
         <div>
             <button>Remove All</button>
             <p>List of options</p>
-            <ol>
                 {
-                    optionsArray.map(option => <li key={option}>{option}</li>) 
+                    props.options.map(option => <Option key={option} optionText={option}/>) 
                 }
-            </ol>
         </div>
     )
 };

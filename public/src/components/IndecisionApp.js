@@ -7,6 +7,8 @@ import AddOption from './AddOption';
 
 export default class IndecisionApp extends React.Component {
     render() {
+        const options = ['one', 'two', 'three']
+        
         return(
             <div>
                 <Header 
@@ -14,7 +16,7 @@ export default class IndecisionApp extends React.Component {
                     subtitle="Put your hands in the life of a computer.."  
                 />
                 <Action />
-                <Options />
+                <Options options={options} />
                 <Option />
                 <AddOption />
              </div>
