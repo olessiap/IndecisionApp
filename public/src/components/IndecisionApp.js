@@ -53,6 +53,7 @@ export default class IndecisionApp extends React.Component {
                 <AddOption 
                     handleAddOption={this.handleAddOption}
                     changeTitleLink={this.changeTitleName}
+                    initialTitleName={this.state.title}
                     />
              </div>
         );

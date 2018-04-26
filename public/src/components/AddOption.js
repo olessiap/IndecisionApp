@@ -9,17 +9,24 @@ export default class AddOption extends React.Component {
         e.preventDefault(); 
 
         const option = e.target.elements.option.value.trim();
-
-        // if(option) {
-        //     this.state.options.push(option);
-        // }
     }
     onChangeTitleLink = () => {
         this.props.changeTitleLink(this.state.title)
     }
+
+    onHandleChange = (event) => {
+        event.persist(); 
+        this.setState(() => {
+            return {
+                title: event.target.value
+            }
+        });    
+    }
     render() {
         return(
             <div>
+                <input type="text" value={this.state.title} 
+                        onChange={(event) => this.onHandleChange(event)} />
                 <button onClick={this.onChangeTitleLink}>change Title</button>
                 <form onSubmit={this.handleAddOption}>
                     <input type = 'text' name = 'option' />
