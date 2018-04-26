@@ -7,9 +7,16 @@ import AddOption from './AddOption';
 
 export default class IndecisionApp extends React.Component {
     state = {
-        options: ["one", "two", "three", "four"]
+        options: ["one", "two", "three", "four"],
+        header: "original header"
     }
-    
+    changeHeaderName = (newHeaderName) => {
+        this.setState(() => {
+            return { 
+                header: newHeaderName
+            }
+        });
+    }
     handlePick = () => {
         const randomNum = Math.floor(Math.random() * this.state.options.length);
         const randomOption = this.state.options[randomNum];
@@ -23,13 +30,18 @@ export default class IndecisionApp extends React.Component {
             }
         });
     }
+
+    handleAddOption = () => {
+        console.log("handleAddOption clicked")
+    }
     
     render() {    
         return(
             <div>
                 <Header 
-                    title="INDECISION APP"
+                    title={this.state.header}
                     subtitle="Put your hands in the life of a computer.."  
+                    changeHeaderLink={this.changeHeaderName}
                 />
                 <Action 
                     handlePick={this.handlePick}
