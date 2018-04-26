@@ -8,12 +8,12 @@ import AddOption from './AddOption';
 export default class IndecisionApp extends React.Component {
     state = {
         options: ["one", "two", "three", "four"],
-        header: "original header"
+        title: "original title"
     }
-    changeHeaderName = (newHeaderName) => {
+    changeTitleName = (newTitleName) => {
         this.setState(() => {
             return { 
-                header: newHeaderName
+                title: newTitleName
             }
         });
     }
@@ -39,9 +39,8 @@ export default class IndecisionApp extends React.Component {
         return(
             <div>
                 <Header 
-                    title={this.state.header}
-                    subtitle="Put your hands in the life of a computer.."  
-                    changeHeaderLink={this.changeHeaderName}
+                    title={this.state.title}
+                    subtitle="Put your hands in the life of a computer.." 
                 />
                 <Action 
                     handlePick={this.handlePick}
@@ -51,7 +50,10 @@ export default class IndecisionApp extends React.Component {
                     options={this.state.options} 
                     handleRemoveAll={this.handleRemoveAll}
                 />
-                <AddOption handleAddOption={this.handleAddOption}/>
+                <AddOption 
+                    handleAddOption={this.handleAddOption}
+                    changeTitleLink={this.changeTitleName}
+                    />
              </div>
         );
     }

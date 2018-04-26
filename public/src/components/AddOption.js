@@ -2,12 +2,9 @@ import React from 'react';
 
 export default class AddOption extends React.Component {
     state = {
-        newHeaderName: "CHANGED HEADER BITCH!"
+        title: "CHANGED TITLE BITCH!"
     }
-    constructor(props) {
-        super(props);
-        this.onChangeHeaderLink = this.onChangeHeaderLink.bind(this);
-    }
+ 
     handleAddOption = (e) => {
         e.preventDefault(); 
 
@@ -17,13 +14,13 @@ export default class AddOption extends React.Component {
         //     this.state.options.push(option);
         // }
     }
-    onChangeHeaderLink = () => {
-        this.props.changeHeaderLink(this.state.newHeaderName)
+    onChangeTitleLink = () => {
+        this.props.changeTitleLink(this.state.title)
     }
     render() {
         return(
             <div>
-                <button onClick={this.onChangeHeaderLink}>change header</button>
+                <button onClick={this.onChangeTitleLink}>change Title</button>
                 <form onSubmit={this.handleAddOption}>
                     <input type = 'text' name = 'option' />
                     <button>Add Option</button>
