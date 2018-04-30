@@ -23,7 +23,14 @@ export default class IndecisionApp extends React.Component {
             }
         });
     }
-    
+    handleAddOption = (option) => {
+        this.setState((prevState) => {
+            return {
+                options: prevState.options.concat(option)
+            }
+         });
+    }
+
     render() {    
         return(
             <div>
