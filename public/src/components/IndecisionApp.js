@@ -24,6 +24,13 @@ export default class IndecisionApp extends React.Component {
         });
     }
     handleAddOption = (option) => {
+        if(!option) {
+            return "Option can't be blank"
+            //indexOf returns option index and -1 if not there
+        } else if(this.state.options.indexOf(option) > -1) { 
+             return "Option alredy entered"
+        }
+        
         this.setState((prevState) => {
             return {
                 options: prevState.options.concat(option)
