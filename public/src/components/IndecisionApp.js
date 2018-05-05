@@ -16,13 +16,25 @@ export default class IndecisionApp extends React.Component {
         alert(randomOption);
     }
 
-    handleRemoveAll = () => {
+    handleDeleteOptions = () => {
         this.setState(()  => {
             return {
                 options: []
             }
         });
+        //implicit return:
+        //this.setState(() => ({ options: [] }));
     }
+
+    handleDeleteOption = (optionToRemove) => {
+        this.setState((prevState) => ({
+            options: prevState.options.filter((option) => {
+                return optionToRemove !== option; // returns all the other options
+            })
+        }));
+    }
+    
+
     handleAddOption = (option) => {
         if(!option) {
             return "Option can't be blank"
@@ -51,9 +63,12 @@ export default class IndecisionApp extends React.Component {
                 />
                 <Options 
                     options={this.state.options} 
-                    handleRemoveAll={this.handleRemoveAll}
+                    handleDeleteOptions={this.handleDeleteOptions}
+                    handleDeleteOption={this.handleDeleteOption}
                 />
-                <AddOption handleAddOption={this.handleAddOption}/>
+                <AddOption 
+                    handleAddOption={this.handleAddOption}
+                />
              </div>
         );
     }
