@@ -10,6 +10,29 @@ export default class IndecisionApp extends React.Component {
         options: ["one", "two", "three", "four"]
     }
     
+    componentDidMount() {
+        try {
+            const json = localStorage.getItem('options');
+            const options = JSON.parse(json); 
+        
+            if(options) {
+                this.setState(() => ({options}));
+            }
+        } catch(e) {
+
+        }
+        
+        console.log("ComponentDidMount");
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.options.length !== this.state.options.length) {
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json)
+            console.log("CDU");
+        }
+    }
+
     handlePick = () => {
         const randomNum = Math.floor(Math.random() * this.state.options.length);
         const randomOption = this.state.options[randomNum];

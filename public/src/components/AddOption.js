@@ -9,11 +9,13 @@ export default class AddOption extends React.Component {
         e.preventDefault(); 
 
         const option = e.target.elements.option.value.trim();
+        //const option = (document.querySelector('[name=option]')).value;
        
         const error = this.props.handleAddOption(option);
         this.setState(() => {
             return {error}
         });
+        
     }
     //error message returns only of it exists bc
     //if no error returns undefined and that's falsy value
